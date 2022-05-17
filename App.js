@@ -1,6 +1,7 @@
 import React from 'react';
 import { WebView } from 'react-native-webview';
 import OneSignal from 'react-native-onesignal';
+import SplashScreen from 'react-native-splash-screen'
 
 class App extends React.Component {
 
@@ -59,32 +60,23 @@ class App extends React.Component {
     
   }
 
+  componentDidMount() {
+    SplashScreen.hide()
+  }
+
   render() {
     return (
       <WebView
       ref={webview => this.webview = webview}
       source={{ uri: 'http://10.66.81.209:8001/cabinet#auth' }}
       onMessage={this.onMessage}
+      onLoadStart={() => {console.log('onLoadStart'); SplashScreen.show()}}
+      onLoadEnd={() => {console.log('onLoadEnd'); SplashScreen.hide()}}
+      decelerationRate={0.5}
+      showsVerticalScrollIndicator={false}
       />
     )
   }  
 }
 
 export default App;
- // const url = 'http://10.0.2.2:8001/cabinet#auth'
-  // const url = 'http://10.66.81.209:8001/cabinet#auth'
-  // const url = 'http://10.66.81.209:8081/cabinet#auth'
-  // const url = 'http://127.0.0.1:8001/cabinet#auth'
-  // const url = 'http://localhost:8001/cabinet#auth'
-  // const url = 'http://91.191.250.154:8001/cabinet#auth'
-  // 10.66.81.209
-
-  // const injectScript = `(function () {
-  //   setTimeout(() => {
-  //     const _GLOBALFLAG=888
-  //     console.log('injectScript')
-  //   // alert(_GLOBALFLAG)
-  //   const MOBILEWEB_DEBUG = false
-  //   }, 2000)
-  //   true;
-  // })()`;
