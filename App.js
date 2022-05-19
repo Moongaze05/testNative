@@ -72,7 +72,6 @@ class App extends React.Component {
       onMessage={this.onMessage}
       onLoadStart={() => {console.log('onLoadStart'); SplashScreen.show()}}
       onLoadEnd={() => {console.log('onLoadEnd'); SplashScreen.hide()}}
-      decelerationRate={0.5}
       showsVerticalScrollIndicator={false}
       />
     )
