@@ -46,8 +46,8 @@ class App extends React.Component {
 
   onMessage(event) {
     console.log(event.nativeEvent.data)
-    if (event.nativeEvent.data === 'MOBILEWEB_DEBUG false') {
-      this.webview.postMessage('MOBILEWEB_DEBUG true')
+    if (event.nativeEvent.data === 'MOBILEWEB_APP false') {
+      this.webview.postMessage('MOBILEWEB_APP true')
       return
     }
     if (event.nativeEvent.data.includes('init push')) {
