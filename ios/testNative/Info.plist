@@ -39,6 +39,8 @@
 	<string></string>
 	<key>OneSignal_suppress_launch_urls</key>
 	<true/>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Save pictures for certain activities</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>
