@@ -73,6 +73,9 @@ class App extends React.Component {
       onLoadStart={() => {console.log('onLoadStart'); SplashScreen.show()}}
       onLoadEnd={() => {console.log('onLoadEnd'); SplashScreen.hide()}}
       showsVerticalScrollIndicator={false}
+      allowFileAccess={true}
+      allowFileAccessFromFileURLs={true}
+      allowUniversalAccessFromFileURLs={true}
       />
     )
   }  
